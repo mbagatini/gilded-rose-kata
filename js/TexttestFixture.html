@@ -12,6 +12,7 @@
 
     $('body').append('<p>OMGHAI!</p>');
 
+	const items = []
     items.push(new Item('+5 Dexterity Vest', 10, 20));
     items.push(new Item('Aged Brie', 2, 0));
     items.push(new Item('Elixir of the Mongoose', 5, 7));
@@ -23,12 +24,14 @@
     // this conjured item does not work properly yet
     items.push(new Item('Conjured Mana Cake', 3, 6));
 
+	const inventory = new Inventory(items)
+
     var days = 2;
 
     for (var i = 0; i < days; i++) {
       showHeaderFor(i);
       showItemsFor(i);
-      update_quality();
+      inventory.update_quality();
     }
 
     function showHeaderFor(day) {
